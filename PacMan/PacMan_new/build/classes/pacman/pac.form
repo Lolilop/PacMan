@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanelSprite" alignment="0" pref="396" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanelSprite" min="-2" pref="325" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelSprite">
+      <Properties>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[500, 350]"/>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[300, 300]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jPanelSpriteMouseClicked"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPanelSpriteKeyPressed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JPanel()&#xa;{&#xa;    public void paintComponent(Graphics g)&#xa;    {&#xa;        Image image1, point,superPoint,fond;&#xa;&#xa;        try {&#xa;&#xa;            map.drawImage(g);&#xa;&#xa;            point = ImageIO.read(new File(&quot;./src/img/point.png&quot;));&#xa;            superPoint = ImageIO.read(new File(&quot;./src/img/superPoint.png&quot;));&#xa;&#xa;            pac.drawImage(g);&#xa;            bleu.drawImage(g);&#xa;            orange.drawImage(g);&#xa;&#xa;            int y = 0, x = 0;&#xa;&#xa;            for (char[] grid1 : grid) {&#xa;                for (int j = 0; j &lt; grid1.length; j++) {&#xa;                    if (grid1[j] == &apos;0&apos;) {&#xa;                        g.drawImage(point, x, y,null);&#xa;                    } else if (grid1[j] == &apos;2&apos;) {&#xa;                         g.drawImage(superPoint, x, y,null);&#xa;                    }&#xa;                    x += 10;&#xa;                }&#xa;                y += 10;&#xa;                x = 10;&#xa;            }&#xa;&#xa;            int posX = 0;&#xa;            for(int i = 0; i &lt; scoreDrawFinal.length; i++) {&#xa;                g.drawImage(scoreDrawFinal[i], posX, 290, null);&#xa;                posX += 10;&#xa;            }&#xa;&#xa;            for(int i = 0; i &lt; nbVie ; i++){&#xa;                posX += 30;&#xa;                //g.drawImage(Spac[6], posX, 290, null);&#xa;            }&#xa;&#xa;        }&#xa;        catch (IOException ex) {System.out.println(ex.getMessage()); }&#xa;&#xa;    }&#xa;&#xa;}&#xa;"/>
+      </AuxValues>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="396" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="325" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </SubComponents>
+</Form>
